@@ -1,37 +1,49 @@
 fn main() {
-    let returned_data = some_function(12.02, 55);
+    let some_bool = false;
+    let some_int = 30;
+    let some_int2 = 50;
 
-    some_procedure(12.5, 32);
-
-    let string_slice_var: &str = "ola";
-    some_str_procedure(string_slice_var);
-
-    let string_var = String::from("terra system real string");
-    some_str_procedure(&string_var);
-
-    some_string_procedure(string_var);
-
-    println!("{}", returned_data);
-}
+    if some_bool == true ||  (some_int > 100 && some_int2 == 200){
+        println!("é boolean");
+    }else if some_int == 30 {
+        println!("é boolean e int 30");
+    }else{
+        println!("nao é boolean");
+    }
 
 
-fn some_function(params_a: f32, params_b: i128) -> f32 {
-    // params_a + params_b
-    println!("hello functions");
+    let var_from_inline = if some_int == 30 { 300 } else { 400 };
 
-    let return_value = 10.1 * params_a + params_b as f32;// cast
+    println!("{}", var_from_inline);
 
-    return_value
-}
+    //similar to if
+    match some_bool{
+        true => {
+            println!("true");
+        }
+        false => {
+            println!("false");
+        }
+    }
 
-fn some_procedure(params_a: f32, params_b: i128) {
-    println!("hello world: {}:{}", params_a, params_b);
-}
+    match some_int {
+        0 => println!("Hit 0 branch"),
+        1..=  100 => {
+            println!("Between 1 and 100 branch");
+            println!("some more stuff");
+        }
+        _ => println!("else branch"),
+    }
 
-fn some_str_procedure(params: &str) {
-    println!("a string slice {}", params);
-}
 
-fn some_string_procedure(params: String) {
-    println!("a string {}", params);
+    let var_from_match = match some_bool {true => 10, false => 20};
+    println!("{}", var_from_match);
+
+    let var_from_match2 = match some_int {
+        0 => 0,
+        1 | 2 => 100,
+        _ => 200,
+    };
+
+    println!("{}", var_from_match2);
 }
