@@ -2,6 +2,8 @@
 
 testes com a linguagem rust
 
-# hello-world
+# using cargo
 
-o primeiro programa a ser escrito em rust
+Primeira vez usango cargo.
+
+Cargo é o gerenciador de pacotes para a linguagem rust [cargo](https://doc.rust-lang.org/cargo/index.html)
