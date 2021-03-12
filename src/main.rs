@@ -1,4 +1,5 @@
 fn main() {
     // cargo é awesome
-    println!("Hello cargo world !");
+    let x = 5;
+    println!("valor de x: {}", x);
 }
