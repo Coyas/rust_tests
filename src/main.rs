@@ -1,53 +1,37 @@
 fn main() {
-    // string slice
-    let example_str: &str = "terra";
+    let returned_data = some_function(12.02, 55);
 
-    let example_string: String = String::from("terrasystem");
+    some_procedure(12.5, 32);
 
-    println!("{}", example_str);
-    println!("{}", example_string);
+    let string_slice_var: &str = "ola";
+    some_str_procedure(string_slice_var);
 
-    //translate between string and string slice
-    let string_from_str: String = example_str.to_string();
-    let string_from_str2: String = "some hardecoded".to_string();
+    let string_var = String::from("terra system real string");
+    some_str_procedure(&string_var);
 
-    println!("{}", string_from_str);
-    println!("{}", string_from_str2);
+    some_string_procedure(string_var);
 
-    let string_from_hardecoded = String::from("some hardcoded");
-    let string_from_str_var = String::from(example_str);
+    println!("{}", returned_data);
+}
 
-    println!("{}", string_from_hardecoded);
-    println!("{}", string_from_str_var);
 
-    let str_from_string: &str = &example_string;
+fn some_function(params_a: f32, params_b: i128) -> f32 {
+    // params_a + params_b
+    println!("hello functions");
 
-    println!("{}", str_from_string);
+    let return_value = 10.1 * params_a + params_b as f32;// cast
 
-    //concatenate 2 string
-    let combine_string_literals = ["first", "second"].concat();
-    let combine_with_format_macro = format!("{} {}", "first", "second");
+    return_value
+}
 
-    println!("{}", combine_string_literals);
-    println!("{}", combine_with_format_macro);
+fn some_procedure(params_a: f32, params_b: i128) {
+    println!("hello world: {}:{}", params_a, params_b);
+}
 
-    let string_plus_str = example_string + example_str;
+fn some_str_procedure(params: &str) {
+    println!("a string slice {}", params);
+}
 
-    println!("{}", string_plus_str);
-
-    let mut mut_string = String::new();
-    mut_string.push_str(example_str);
-    mut_string.push_str("example_str");
-    mut_string.push('c');
-
-    let a = String::from("a");
-    let b = String::from("b");
-    let combine = a + &b + &mut_string;
-
-    println!("{}",combine);
-
-    // let char_by_index = &example_str.chars().nth(1);
-
-    // println!("{}", char_by_index); //errro
-
+fn some_string_procedure(params: String) {
+    println!("a string {}", params);
 }
